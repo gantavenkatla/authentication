@@ -7,7 +7,9 @@ import org.springframework.web.client.RestTemplate;
 
 @Service
 public class AuthNService {
-    public  static  final String OKTA_URL="dummy";
+    
+  @Value("${okta.endpoint}")
+  private String OKTA_URL;
 
 
     public AuthNResponse authN(AuthNRequest authNRequest){
